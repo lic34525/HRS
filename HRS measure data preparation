@@ -1,0 +1,40 @@
+tracker<-read.csv("trk2018tr_r.csv")
+tracker
+trackersum<-subset(tracker,select=
+                 c("ï..HHID","PN","BIRTHYR","BIRTHMO",
+                   "DEGREE","GENDER","HISPANIC","RACE","SCHLYRS") )
+write.csv(trackersum,"trackersum.csv",row.names=FALSE)
+
+#immediate word recall
+measure<-read.csv("COGIMP9216A_R.csv")
+imme<-subset(measure,select=
+                     c("ï..HHID","PN","R3IMRC","R4IMRC",
+                       "R5IMRC","R6IMRC","R7IMRC","R8IMRC","R9IMRC",
+                       "R10IMRC","R11IMRC","R12IMRC","R13IMRC") )
+write.csv(imme,"imme.csv",row.names=FALSE)
+
+#delayed word recall
+measure<-read.csv("COGIMP9216A_R.csv")
+delay<-subset(measure,select=
+               c("ï..HHID","PN","R3DLRC","R4DLRC",
+                 "R5DLRC","R6DLRC","R7DLRC","R8DLRC","R9DLRC",
+                 "R10DLRC","R11DLRC","R12DLRC","R13DLRC") )
+write.csv(delay,"delay.csv",row.names=FALSE)
+
+#mental status score
+measure<-read.csv("COGIMP9216A_R.csv")
+ms<-subset(measure,select=
+                c("ï..HHID","PN","R3MSTOT","R4MSTOT",
+                  "R5MSTOT","R6MSTOT","R7MSTOT","R8MSTOT","R9MSTOT",
+                  "R10MSTOT","R11MSTOT","R12MSTOT","R13MSTOT") )
+write.csv(ms,"ms.csv",row.names=FALSE)
+
+#vocabulary
+measure<-read.csv("COGIMP9216A_R.csv")
+vocab<-subset(measure,select=
+             c("ï..HHID","PN","R3VOCAB","R4VOCAB",
+               "R5VOCAB","R6VOCAB","R7VOCAB","R8VOCAB","R9VOCAB",
+               "R10VOCAB","R11VOCAB","R12VOCAB","R13VOCAB") )
+write.csv(vocab,"vocab.csv",row.names=FALSE)
+
+
